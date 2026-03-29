@@ -1,0 +1,9 @@
+<p class="image-box__description">
+  {{ image.name }} / {{ image.date | date:'dd.MM.yyyy HH:mm' }}
+</p>
+<div class="image-box__img-container">
+  <img *ngIf="!drawCanvas; else imageBoxContainer" [src]="image.url" [alt]="image.name" class="image-box__img">
+  <ng-template #imageBoxContainer>
+    <canvas #imageBox class="canvas-box"></canvas>
+  </ng-template>
+</div>

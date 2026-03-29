@@ -1,0 +1,80 @@
+@import '~@nebular/theme/styles/theming';
+@import '~@nebular/theme/styles/themes/default';
+@import 'abstracts/variables';
+@import 'base/typography';
+
+$nb-themes: nb-register-theme((
+
+  // color-primary-100: #f2f6ff,
+  // color-primary-200: #d9e4ff,
+  // color-primary-300: #a6c1ff,
+  // color-primary-400: #598bff,
+  // color-primary-500: #3366ff,
+  // color-primary-600: #274bdb,
+  // color-primary-700: #1a34b8,
+  // color-primary-800: #102694,
+  // color-primary-900: #091c7a,
+
+  /*** LAYOUT ***/
+  layout-background-color: $layoutBackgroundColor,
+  layout-text-color: $layoutTextColor,
+  link-text-color: $linkTextColor,
+  layout-text-font-family: $layout-text-font-family,
+  text-paragraph-font-family: $layout-text-font-family,
+  text-heading-2-font-family: $layout-text-font-family,
+
+  /*** HEADER ***/
+  header-background-color: transparent,
+  header-shadow: none,
+  header-padding: 0,
+  header-height: 40px,
+  list-item-font-size: 10px,
+
+  /*** CUSTOM PROPERTIES ***/
+  text-primary-color: $layoutTextColor,
+  layout-padding: 0,
+  layout-small-padding: 0,
+  layout-medium-padding: 0,
+
+  /*** SIDEBAR ***/
+  sidebar-width: 80px,
+  sidebar-shadow: 0px 4px 26px rgba(0, 0, 0, 0.06),
+
+  /*** TABLES ***/
+  table-background-color: $tableBackgroundColor,
+  table-header-line: $tableHeaderLine,
+  table-row-line: $tableRowLine,
+
+  /*** INFO COMPONENT ***/
+  info-text-color: $info-text-color,
+  info-background-high: $info-background-high,
+  info-background-medium: $info-background-medium,
+  info-background-low: $info-background-low,
+
+  /*** CARDS ***/
+  card-header-text-color: $layoutTextColor,
+  card-header-text-font-family: $layout-text-font-family,
+  card-header-text-font-size: 15px,
+  card-header-text-font-weight: 500,
+  card-text-font-size: 12px,
+  card-text-line-height: 1.5,
+  card-value-number-color: $value-number-color,
+
+  /*** FORMS ***/
+  input-text-font-family: $layout-text-font-family,
+  input-placeholder-text-font-family: $layout-text-font-family,
+  form-button-text-color: $form-button-text-color,
+  form-button-primary: $form-button-primary,
+  form-text-placeholder: $form-text-placeholder,
+
+  /*** ALERTS ***/
+  alert-danger-background-color: transparent,
+  toastr-title-text-font-size: 14px,
+  toastr-text-font-size: 12px,
+  toastr-text-line-height: 1.5,
+  toastr-padding: 15px,
+
+  /*** CANVAS ***/
+  canvas-background: $canvas-background,
+
+), default, default);

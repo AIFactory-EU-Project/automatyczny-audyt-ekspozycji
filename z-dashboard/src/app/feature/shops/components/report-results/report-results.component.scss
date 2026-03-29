@@ -1,0 +1,26 @@
+.aif-card-image {
+  height: 100%;
+  display: block;
+}
+
+.grid-container {
+  margin-bottom: 20px;
+}
+
+.result-list {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  height: 67px;
+
+  &__item {
+    font-size: 1.4rem;
+    color: #0D1C2E;
+    margin: 11px 0;
+  }
+
+  &__score {
+    font-weight: bold;
+    color: #0075BE;
+  }
+}

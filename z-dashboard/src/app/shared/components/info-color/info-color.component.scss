@@ -1,0 +1,29 @@
+@import 'themes/themes';
+
+.agreement-color {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-width: 75px;
+  max-width: 130px;
+  height: 22px;
+  margin: 0 auto;
+  border-radius: 4px;
+  color: nb-theme(info-text-color);
+
+  &__value {
+    font-size: 1.2rem;
+  }
+
+  &--high {
+    background-color: nb-theme(info-background-high);
+  }
+
+  &--medium {
+    background-color: nb-theme(info-background-medium);
+  }
+
+  &--low {
+    background-color: nb-theme(info-background-low);
+  }
+}

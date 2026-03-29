@@ -1,0 +1,20 @@
+<div class="auth-container">
+  <div class="auth-container__logo">
+    <img src="/assets/logo-aifactory.svg" alt="AI Factory" class="auth-container__logo-img">
+  </div>
+
+  <h3 class="auth-container__title">Logowanie</h3>
+
+  <form [formGroup]="loginForm" (ngSubmit)="login()" class="form">
+    <input type="text" nbInput fullWidth placeholder="Nazwa użytkownika" class="form__inp-text" formControlName="login">
+    <div class="form__inp-password">
+      <input [type]="typePasswordField" nbInput fullWidth placeholder="Hasło" class="form__inp-text" formControlName="password">
+      <button type="button" (click)="togglePassword()" class="form__toggle-password">
+        <nb-icon [icon]="iconPassword" class="form__icon-pass"></nb-icon>
+      </button>
+    </div>
+    <button class="form__btn">Zaloguj</button>
+  </form>
+</div>
+
+

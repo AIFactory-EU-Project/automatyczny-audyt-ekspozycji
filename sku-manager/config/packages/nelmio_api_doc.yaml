@@ -1,0 +1,18 @@
+nelmio_api_doc:
+    documentation:
+        info:
+            title: SKU Manager Service
+            description: Main API service
+            version: 0.0.10
+        securityDefinitions:
+            Bearer:
+                type: apiKey
+                description: 'Value: Bearer {jwt}'
+                name: Authorization
+                in: header
+        security:
+            -   Bearer: []
+    areas: # to filter documented areas
+        default:
+            path_patterns:
+                - ^/api(?!/doc$) # Accepts routes under /api except /api/doc

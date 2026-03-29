@@ -1,0 +1,10 @@
+<aif-card [title]="title">
+  <div class="report-info">
+    <p class="report-info__text">{{ shop.name }} {{ shop.code }}</p>
+    <p class="report-info__text">
+      <ng-container *ngIf="shop.street">{{ shop.street }}</ng-container>
+      <ng-container *ngIf="shop.zipCode">, {{ shop.zipCode }}</ng-container>
+      <ng-container *ngIf="shop.city"> {{ shop.city }}</ng-container>
+    </p>
+  </div>
+</aif-card>

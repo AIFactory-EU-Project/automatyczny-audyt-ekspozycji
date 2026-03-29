@@ -1,0 +1,16 @@
+@import 'themes/themes';
+
+.accuracy {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 78px;
+}
+
+.value {
+  font-size: 70px;
+  color: nb-theme(card-value-number-color);
+  font-weight: 500;
+  margin: 14px 0;
+  line-height: 1;
+}

@@ -1,0 +1,36 @@
+@import 'themes/themes';
+
+.form {
+  &__inp-text {
+    background-color: #ffffff;
+    border-radius: 5px;
+    border-color: transparent;
+    padding: 0 25px;
+    font-size: 15px;
+    max-width: 100%;
+
+    &:focus {
+      border: 1px solid nb-theme(form-button-primary);
+    }
+
+    &::placeholder {
+      color: nb-theme(form-text-placeholder);
+      font-style: italic;
+    }
+  }
+
+  &__btn {
+    font-size: 13px;
+    font-weight: 600;
+    border: 0;
+    cursor: pointer;
+    color: nb-theme(form-button-text-color);
+    background-color: nb-theme(form-button-primary);
+    border-radius: 5px;
+    padding: 12px 15px;
+
+    &:hover {
+      background-color: darken(nb-theme(form-button-primary), 5%);
+    }
+  }
+}

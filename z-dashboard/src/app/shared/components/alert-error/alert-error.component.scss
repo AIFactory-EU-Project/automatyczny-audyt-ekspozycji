@@ -1,0 +1,10 @@
+.alert {
+  margin: 20px;
+  background-color: transparent;
+
+  &__text {
+    color: #ff3d71;
+    text-align: center;
+    line-height: 1.5;
+  }
+}

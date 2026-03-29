@@ -1,0 +1,10 @@
+.audit {
+  height: 78px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  &__text {
+    margin: 12px 0;
+  }
+}

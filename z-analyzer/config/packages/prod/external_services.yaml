@@ -1,0 +1,13 @@
+parameters:
+    ecosystem:
+        camera_service:
+            location: 'http://172.19.0.2:5000'
+            credentials:
+                login: 'admin'
+                password: '111222qqqwww'
+        ai_service:
+            location: 'https://app-m8h3nu7.aif.nordasys.net'
+        file_service:
+            location: ''
+
+    router.request_context.host: 'api.dash.aif.nordasys.net'

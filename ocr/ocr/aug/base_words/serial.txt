@@ -1,0 +1,23 @@
+Numer partii:
+Numer serii:
+LOT:
+Nr partii:
+Nr partii (Lot):
+Nr serii:
+Nr serii (Lot):
+Lot:
+Data ważności / numer serii:
+Numer partii produkcyjnej:
+Najlepiej spożyć: / Numer partii:
+Numer partii
+Numer serii
+LOT
+Nr partii
+Nr partii (Lot)
+Nr serii
+Nr serii (Lot)
+Lot
+Data ważności / numer serii
+Numer partii produkcyjnej
+Najlepiej spożyć / Numer partii
+Numer partii

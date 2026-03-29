@@ -1,0 +1,30 @@
+@import 'themes/themes';
+
+html {
+  box-sizing: border-box;
+  font-size: 10px;
+
+  *::before,
+  *::after {
+    box-sizing: inherit;
+  }
+}
+
+html {
+
+  .aif-container {
+    background-color: nb-theme(layout-background-color);
+    color: nb-theme(layout-text-color);
+
+    p {
+      font-size: 1.4rem;
+      color: nb-theme(layout-text-color);
+    }
+  }
+
+  .nb-theme-default nb-layout .layout .layout-container nb-sidebar .main-container-fixed {
+    top: 1rem;
+  }
+}
+
+

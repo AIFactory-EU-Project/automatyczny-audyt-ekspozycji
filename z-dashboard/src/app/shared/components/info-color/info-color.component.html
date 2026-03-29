@@ -1,0 +1,9 @@
+<div class="agreement-color agreement-color--{{infoColor}}" [ngStyle]="{ 'background-color': infoColor }">
+    <ng-container [ngSwitch]="status">
+      <span *ngSwitchCase="1">ok</span>
+      <span *ngSwitchCase="2">za mało twarzy</span>
+      <span *ngSwitchCase="3">zła półka</span>
+      <span *ngSwitchCase="4">brak</span>
+    </ng-container>
+  <span *ngIf="!isHiddenValue" class="agreement-color__value">{{ value }}</span>
+</div>

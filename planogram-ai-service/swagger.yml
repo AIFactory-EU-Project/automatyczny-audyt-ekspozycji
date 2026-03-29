@@ -1,0 +1,194 @@
+swagger: "2.0"
+info:
+  title: "AI Service API"
+  version: "0.3.0"
+host: "localhost:7552"
+schemes: ["http"]
+paths:
+  /verify-grill-photo-valid-for-analysis:
+    post:
+      summary: "verifyGrillPhotoValidForAnalysis"
+      consumes: ["multipart/form-data"]
+      produces: ["application/json"]
+      parameters:
+       - in: formData
+         name: image
+         type: file
+         required: true
+         description: Photo of grill.
+      responses:
+        200:
+          description: "Ok"
+          schema:
+            type: object
+            properties:
+              result:
+                type: boolean
+        400:
+          description: "Request error"
+          schema:
+            type: object
+            properties:
+              message:
+                type: string
+        500:
+          description: "Internal server error"
+
+  /verify-shelf-photo-valid-for-analysis:
+    post:
+      summary: "verifyShelfPhotoValidForAnalysis"
+      consumes: ["multipart/form-data"]
+      produces: ["application/json"]
+      parameters:
+       - in: formData
+         name: image
+         type: file
+         required: true
+         description: Photo of shelf.
+      responses:
+        200:
+          description: "Ok"
+          schema:
+            type: object
+            properties:
+              result:
+                type: boolean
+        400:
+          description: "Request error"
+          schema:
+            type: object
+            properties:
+              message:
+                type: string
+        500:
+          description: "Internal server error"
+
+  /remove-faces-from-photo:
+    post:
+      summary: "removeFacesFromPhoto"
+      consumes: ["multipart/form-data"]
+      produces: ["image/png", "application/json"]
+      parameters:
+       - in: formData
+         name: image
+         type: file
+         required: true
+         description: Return censored picture.
+      responses:
+        200:
+          description: "Ok"
+          schema:
+            type: file
+        400:
+          description: "Request error"
+          schema:
+            type: object
+            properties:
+              message:
+                type: string
+        500:
+          description: "Internal server error"
+
+  /generate-grill-report:
+    post:
+      summary: "generateGrillReport"
+      consumes: ["multipart/form-data"]
+      produces: ["application/json"]
+      parameters:
+       - in: formData
+         name: image
+         type: file
+         required: true
+         description: Photo of grill.
+      responses:
+        200:
+          description: "Ok"
+          schema:
+            type: object
+            properties:            
+              result:
+                type: object
+                properties:
+                  count:
+                    type: integer
+        400:
+          description: "Request error"
+          schema:
+            type: object
+            properties:
+              message:
+                type: string
+        500:
+          description: "Internal server error"
+
+  /generate-planogram-report:
+    post:
+      summary: "generatePlanogramReport"
+      consumes: ["multipart/form-data"]
+      produces: ["application/json"]
+      parameters:
+       - in: formData
+         name: image
+         type: file
+         required: true
+         description: Photo of shelf.
+       - in: formData
+         name: planogramId
+         type: integer
+         required: true
+       - in: formData
+         name: cameraIp
+         type: string
+         required: true
+      responses:
+        200:
+          description: "Ok"
+          schema:
+            type: object
+            properties:
+              result:
+                type: object
+                properties:
+                  boxes:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        accuracy:
+                          type: number
+                        shelfFromTop:
+                          type: integer
+                        positionFromLeft:
+                          type: integer
+                        skuIndex:
+                          type: string
+                        box:
+                          type: object
+                          properties:
+                            topLeftX:
+                              type: integer
+                            topLeftY:
+                              type: integer
+                            width:
+                              type: integer
+                            height:
+                              type: integer
+        400:
+          description: "Request error"
+          schema:
+            type: object
+            properties:
+              message:
+                type: string
+        500:
+          description: "Internal server error"
+          
+  /health-check:
+    get:
+      summary: "Health check"
+      produces: ["application/json"]
+      responses:
+        200:
+          description: "Ok"
+        500:
+          description: "Internal server error"

@@ -1,0 +1,11 @@
+version: "2.0"
+services:
+  planogram_camera_service:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: registry.aif.nordasys.net/aif/planogram_camera_service:lastest
+    ports:
+      - "5000:5000"
+    restart: always
+    # set uid,gui

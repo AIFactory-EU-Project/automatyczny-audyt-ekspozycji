@@ -1,0 +1,22 @@
+doctrine:
+    dbal:
+        # configure these for your database server
+        # use postgresql for PostgreSQL
+        # use sqlite for SQLite
+        driver: 'pdo_pgsql'
+        server_version: '12.0'
+        url: '%env(DATABASE_URL)%'
+        types:
+            FileStorageType: App\Utility\DBAL\Type\FileStorageType
+            SegmentType: App\Utility\DBAL\Type\SegmentType
+    orm:
+        auto_generate_proxy_classes: true
+        naming_strategy: doctrine.orm.naming_strategy.underscore
+        auto_mapping: true
+        mappings:
+            App:
+                is_bundle: false
+                type: annotation
+                dir: '%kernel.project_dir%/src/Entity'
+                prefix: 'App\Entity'
+                alias: App

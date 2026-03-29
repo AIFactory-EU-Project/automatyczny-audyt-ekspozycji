@@ -1,0 +1,65 @@
+@import 'themes/themes';
+
+.auth-container {
+  max-width: 320px;
+  margin: 0 auto;
+
+  &__logo {
+    margin: 94px 0 60px;
+    display: flex;
+    justify-content: center;
+  }
+
+  &__logo-img {
+    width: 130px;
+    height: 160px;
+  }
+
+  &__title {
+    text-align: left;
+    font-size: 24px;
+    color: nb-theme(layoutTextColor);
+    margin: 0 0 0 24px;
+  }
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  &__inp-text {
+    width: 270px;
+    height: 48px;
+    box-shadow: 0px 4px 26px rgba(0, 0, 0, 0.06);
+    margin-top: 25px;
+  }
+
+  &__inp-password {
+    width: 270px;
+    max-width: 100%;
+    position: relative;
+
+    .form__inp-text {
+      padding-right: 45px;
+    }
+  }
+
+  &__toggle-password {
+    position: absolute;
+    border: 0;
+    background-color: transparent;
+    color: nb-theme(form-text-placeholder);
+    top: 35px;
+    right: 7px;
+  }
+
+  &__icon-pass {
+    font-size: 24px;
+  }
+
+  &__btn {
+    width: 160px;
+    margin-top: 50px;
+  }
+}

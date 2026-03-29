@@ -1,0 +1,8 @@
+index:
+    path: /
+    controller: App\Controller\DefaultController::index
+    format: json
+api:
+    prefix: /api
+    resource: '../src/Controller'
+    format: json

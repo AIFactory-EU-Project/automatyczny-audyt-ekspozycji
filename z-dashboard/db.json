@@ -1,0 +1,169 @@
+{
+  "shops": [
+    {
+      "id": 1,
+      "name": "Żabka",
+      "city": "Poznań",
+      "street": "Dąbrowskiego 26",
+      "zipCode": "80-283",
+      "agreement": 0.75
+    },
+    {
+      "id": 2,
+      "name": "Żabka",
+      "city": "Warszawa",
+      "street": "Aleje Jerozolimskie 18",
+      "zipCode": "23-122",
+      "agreement": 0.25
+    },
+    {
+      "id": 3,
+      "name": "Żabka",
+      "city": "Gdańsk",
+      "street": "Grunwalldzka 142",
+      "zipcode": "12-493",
+      "agreement": 0.47
+    },
+    {
+      "id": 4,
+      "name": "Żabka",
+      "city": "Wrocław",
+      "street": "Malinowska 35",
+      "zipcode": "50-203",
+      "agreement": 0.11
+    },
+    {
+      "id": 5,
+      "name": "Żabka",
+      "city": "Kraków",
+      "street": "Wileńska 17",
+      "zipcode": "90-302",
+      "agreement": 0.31
+    },
+    {
+      "id": 6,
+      "name": "Żabka",
+      "city": "Bydgoszcz",
+      "street": "Zacisze 7",
+      "zipcode": "76-203",
+      "agreement": 0.19
+    }
+  ],
+  "reports": [
+    {
+      "id": 1,
+      "name": "DGWA1231109191200",
+      "date":  "2019-11-21 08:00:00",
+      "agreement": 0.75,
+      "shopId": 1,
+      "reportType": "dg"
+    },
+    {
+      "id": 2,
+      "name": "DGWA4711109191200",
+      "date":  "2019-10-18 20:20:00",
+      "agreement": 0.32,
+      "shopId": 2,
+      "reportType": "dg"
+    },
+    {
+      "id": 3,
+      "name": "SPWA5621109191200",
+      "date":  "2019-05-11 08:00:00",
+      "agreement": 0.21,
+      "shopId": 1,
+      "reportType": "sp"
+    },
+    {
+      "id": 4,
+      "name": "ROWA4711109191200",
+      "date":  "2019-10-18 10:20:00",
+      "agreement": 0.21,
+      "shopId": 1,
+      "reportType": "rollery"
+    },
+    {
+      "id": 5,
+      "name": "ROWA5621109191200",
+      "date":  "2019-05-11 11:00:00",
+      "agreement": 0.67,
+      "shopId": 1,
+      "reportType": "rollery"
+    },
+    {
+      "id": 6,
+      "name": "ROWA5621109191200",
+      "date":  "2019-05-11 11:00:00",
+      "agreement": 0.15,
+      "shopId": 1,
+      "reportType": "rollery"
+    }
+  ],
+  "report-result": [
+    {
+      "id": 1,
+      "shop": {
+        "id": 1,
+        "name": "Żabka",
+        "code": "WA123AAAAAAAA",
+        "street": "Myśliwska 33",
+        "zipCode": "80-283",
+        "city": "Gdańsk"
+      },
+      "audit": {
+        "name": "DGWA1231109191200",
+        "date": "2019-10-21 08:30:00",
+        "agreement": "0.92"
+      },
+      "imageReal": {
+        "name": "IMG3023920303AADA",
+        "date": "2019-10-21 08:30:00",
+        "url": "https://testujzzyciem.files.wordpress.com/2018/04/hot1.jpg?w=528&h=312&crop=1"
+      },
+      "imagePlanogram": {
+        "name": "IMG3023920303AADA",
+        "date": "2019-10-21 08:30:00",
+        "url": "https://testujzzyciem.files.wordpress.com/2018/04/hot1.jpg?w=528&h=312&crop=1"
+      }
+    }
+  ],
+  "report-result-list": [
+    {
+      "shelf": 2,
+      "position": 13,
+      "index": 1205893,
+      "name": "Sok z marchwi i banana 330 ML Delicade",
+      "faces": 2,
+      "result": "ok",
+      "color": "#47C2B1"
+    },
+    {
+      "shelf": 1,
+      "position": 23,
+      "index": 2930132,
+      "name": "Sałatka jarzynowa",
+      "faces": 21,
+      "result": "za dużo twarzy",
+      "color": "#FFC76A"
+    },
+    {
+      "shelf": 2,
+      "position": 6,
+      "index": 1837293,
+      "name": "Kanapka z grillowanym kurczakiem i pomidorami",
+      "faces": 5,
+      "result": "ręczna walidacja",
+      "color": "#5C5C5C"
+    },
+    {
+      "shelf": 5,
+      "position": 10,
+      "index": 1294856,
+      "name": "Sok z marchwi i banana 330 ML Delicade",
+      "faces": 3,
+      "result": "brak SKU",
+      "color": "#FF8576"
+    }
+  ]
+}
+

@@ -1,0 +1,49 @@
+# This file is the entry point to configure your own services.
+# Files in the packages/ subdirectory configure your dependencies.
+
+# Put parameters here that don't need to change on each machine where the app is deployed
+# https://symfony.com/doc/current/best_practices/configuration.html#application-related-configuration
+parameters:
+    system_name:  '%env(string:SYSTEM_NAME)%'
+    mail_sender_address:  '%env(string:MAIL_SENDER_ADDRESS)%'
+    frontend_url_password_reset: '%env(string:FRONTEND_URL_PASSWORD_RESET)%'
+
+    aws_s3_region: '%env(string:AWS_S3_REGION)%'
+    aws_s3_media_bucket_name: '%env(string:AWS_S3_MEDIA_BUCKET_NAME)%'
+    aws_s3_nn_bucket_name: '%env(string:AWS_S3_NN_BUCKET_NAME)%'
+    aws_access_key_id: '%env(string:AWS_ACCESS_KEY_ID)%'
+    aws_secret_access_key: '%env(string:AWS_SECRET_ACCESS_KEY)%'
+
+    aws_cloudfront_region: '%env(string:AWS_CLOUDFRONT_REGION)%'
+    aws_cloudfront_media_url: '%env(string:AWS_CLOUDFRONT_MEDIA_URL)%'
+    aws_cloudfront_nn_url: '%env(string:AWS_CLOUDFRONT_NN_URL)%'
+
+    aws_cloudfront_media_private_key: '%kernel.project_dir%/.aws-cloudfront-media.pem'
+    aws_cloudfront_media_key_pair_id: '%env(string:AWS_CLOUDFRONT_MEDIA_KEY_PAIR_ID)%'
+
+services:
+    # default configuration for services in *this* file
+    _defaults:
+        autowire: true      # Automatically injects dependencies in your services.
+        autoconfigure: true # Automatically registers your services as commands, event subscribers, etc.
+        public: true
+
+    # makes classes in src/ available to be used as services
+    # this creates a service per class whose id is the fully-qualified class name
+    App\:
+        resource: '../src/*'
+        exclude: '../src/{DependencyInjection,Dto,Entity,Event,Exception,Migrations,Tests,Kernel.php}'
+
+    # controllers are imported separately to make sure services can be injected
+    # as action arguments even if you don't extend any base controller class
+    App\Controller\:
+        resource: '../src/Controller'
+        tags: ['controller.service_arguments']
+
+    # add more service definitions when explicit configuration is needed
+    # please note that last definitions always *replace* previous ones
+    Symfony\Component\Security\Http\Authentication\AuthenticationSuccessHandlerInterface:
+        '@Lexik\Bundle\JWTAuthenticationBundle\Security\Http\Authentication\AuthenticationSuccessHandler'
+    Symfony\Component\Security\Core\User\UserCheckerInterface: '@App\Security\UserChecker'
+
+    App\Service\Storage\StorageManagerInterface: '@App\Service\Storage\S3StorageManager'

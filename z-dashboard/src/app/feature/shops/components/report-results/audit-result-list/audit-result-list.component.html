@@ -1,0 +1,28 @@
+<table class="table-min">
+  <thead>
+  <tr>
+<!--    <th class="table-min__header-row table-min&#45;&#45;row-center table-min&#45;&#45;sort" (click)="sort('shelf')">Półka</th>-->
+<!--    <th class="table-min__header-row table-min&#45;&#45;row-center table-min&#45;&#45;sort" (click)="sort('position')">Pozycja</th>-->
+<!--    <th class="table-min__header-row table-min&#45;&#45;row-center table-min&#45;&#45;sort" (click)="sort('index')">Indeks</th>-->
+<!--    <th class="table-min__header-row table-min&#45;&#45;sort" (click)="sort('name')">Nazwa</th>-->
+    <th class="table-min__header-row table-min--row-center">Półka</th>
+    <th class="table-min__header-row table-min--row-center">Pozycja</th>
+    <th class="table-min__header-row table-min--row-center">Indeks</th>
+    <th class="table-min__header-row">Nazwa</th>
+    <th class="table-min__header-row table-min--row-center">Twarze</th>
+    <th class="table-min__header-row table-min--row-center">Wynik</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let result of reportsList">
+    <td class="table-min__body-row table-min--row-center">{{ result.shelf || '-' }}</td>
+    <td class="table-min__body-row table-min--row-center">{{ result.position || '-' }}</td>
+    <td class="table-min__body-row table-min--row-center">{{ result.index }}</td>
+    <td class="table-min__body-row">{{ result.skuName }}</td>
+    <td class="table-min__body-row table-min--row-center">{{ result.faces_count || '-' }}</td>
+    <td class="table-min__body-row table-min--row-center">
+      <aif-info-color [percent]="result.accuracy" [status]="result.status" [isHiddenValue]="true"></aif-info-color>
+    </td>
+  </tr>
+  </tbody>
+</table>

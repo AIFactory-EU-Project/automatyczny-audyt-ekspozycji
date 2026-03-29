@@ -1,0 +1,38 @@
+fos_rest: # Read the documentation: https://symfony.com/doc/master/bundles/FOSRestBundle/index.html
+  routing_loader:
+    default_format: json
+    include_format: false
+  body_listener: true
+  format_listener:
+    rules:
+      - { path: '^/', priorities: ['json', 'html'], fallback_format: json, prefer_extension: false }
+  param_fetcher_listener: true
+  access_denied_listener:
+    json: true
+  view:
+    view_response_listener: true
+    formats:
+      json: true
+
+fos_oauth_server:
+  db_driver: orm
+  client_class: App\Entity\Client
+  access_token_class: App\Entity\AccessToken
+  refresh_token_class: App\Entity\RefreshToken
+  auth_code_class: App\Entity\AuthCode
+  service:
+    user_provider: fos_user.user_provider.username
+    options:
+      access_token_lifetime: 86400
+      refresh_token_lifetime: 1209600
+      auth_code_lifetime: 30
+
+fos_user:
+  db_driver: orm
+  firewall_name: main
+  user_class: App\Entity\User
+  from_email:
+    address: send@noreply.com
+    sender_name: Nil
+  service:
+      mailer: fos_user.mailer.noop

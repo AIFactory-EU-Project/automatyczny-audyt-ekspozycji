@@ -1,0 +1,15 @@
+.table-shops {
+  &__name {
+    width: 40%;
+  }
+
+  &__accuracy {
+    padding: 0 20px;
+  }
+}
+
+.table {
+  &__header-sort {
+    cursor: pointer;
+  }
+}

@@ -1,0 +1,18 @@
+<nb-layout>
+  <!-- Sidebar -->
+  <nb-sidebar>
+    <aif-nav></aif-nav>
+  </nb-sidebar>
+
+  <!-- Content -->
+  <nb-layout-column class="content">
+    <nb-layout-header>
+      <div class="header">
+        <xng-breadcrumb class="breadcrumb"></xng-breadcrumb>
+        <aif-user-menu></aif-user-menu>
+      </div>
+    </nb-layout-header>
+
+    <router-outlet></router-outlet>
+  </nb-layout-column>
+</nb-layout>

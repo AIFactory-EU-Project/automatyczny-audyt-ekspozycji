@@ -1,0 +1,7 @@
+delete from planogram_element;
+delete from shop_planogram_assignment;
+delete from planogram;
+delete from camera;
+delete from shop;
+delete from segment;
+delete from sku;

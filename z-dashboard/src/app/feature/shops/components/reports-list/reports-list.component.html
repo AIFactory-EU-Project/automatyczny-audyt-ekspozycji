@@ -1,0 +1,38 @@
+<aif-heading-title [title]="title"></aif-heading-title>
+
+<table class="table table-shops">
+  <thead>
+    <tr class="table__header">
+      <th class="table__header-row table-shops__name table-shops--sort">Nazwa audytu</th>
+      <th class="table__header-row">Data</th>
+      <th class="table__header-row">Godzina</th>
+      <th class="table__header-row table--row-center table-shops__name table-shops">Wynik</th>
+<!--      <th class="table__header-row table-shops__name table-shops&#45;&#45;sort" (click)="sort('name')">Nazwa audytu</th>-->
+<!--      <th class="table__header-row table-shops&#45;&#45;sort" (click)="sort('date')">Data</th>-->
+<!--      <th class="table__header-row table-shops&#45;&#45;sort" (click)="sort('date')">Godzina</th>-->
+<!--      <th class="table__header-row table-shops&#45;&#45;sort" (click)="sort('agreement')">Zgodność</th>-->
+      <th class="table__header-row">Wyniki</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr *ngFor="let report of reports" class="table__tbody">
+      <td class="table__body-row">{{ report.name }}</td>
+      <td class="table__body-row">{{ report.date | date:'dd.MM.yyyy' }}</td>
+      <td class="table__body-row">{{ report.date | date:'HH:mm' }}</td>
+      <td class="table__body-row table--row-center">
+        <span *ngIf="report.segmentTypeName == 'grill'; else noGrill">{{ report.accuracy }}</span>
+        <ng-template #noGrill>
+          <aif-info-color *ngIf="report.accuracy; else noAccuracy" [percent]="report.accuracy"></aif-info-color>
+          <ng-template #noAccuracy>-</ng-template>
+        </ng-template>
+      </td>
+      <td class="table__body-row"><a [routerLink]="['/shops', report.shopId, report.segmentTypeName, 'result', report.id]">Wyniki audytu</a></td>
+    </tr>
+
+    <tr *ngIf="error">
+      <td colspan="5"><aif-alert-error [error]="error"></aif-alert-error></td>
+    </tr>
+  </tbody>
+</table>
+

@@ -1,0 +1,15 @@
+# Detection Service service config for tytan
+# Temporary configuration for demo
+
+[Unit]
+Description = uWSGI instance to serve Drugs Counter Detection Service
+After = network.target
+
+[Service]
+User = www-data
+Group = www-data
+WorkingDirectory = /home/atlas/deploy/stacje/take-task/task/app/service/pylons
+ExecStart = /home/atlas/deploy/stacje/take-task/venv/bin/uwsgi --ini ./config/box-webapi-service.ini
+
+[Install]
+WantedBy = multi-user.target

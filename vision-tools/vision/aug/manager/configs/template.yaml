@@ -1,0 +1,65 @@
+#  Template document with parameters configurations.
+#
+#    Usage example:
+#
+#      1. Simple, single method call:
+#        layer_name:
+#          - ClassName.method_name: {probability: 0.1, <other parameters>}
+#
+#      2. Multiple method calls with different parameters:
+#        layer_name:
+#          - ClassName.method_name:
+#            - {probability: 0.1, <other parameters set 1>}
+#            - {probability: 0.2, <other parameters set 2>}
+#            - {probability: 0.3, <other parameters set 3>}
+#            - ...
+#
+#      3. Choice random method from the list:
+#        layer_name:
+#          choice1:
+#            - ClassName1.method_name2: {probability: 0.1, <other parameters>}
+#            - ClassName2.method_name3: {probability: 0.2, <other parameters>}
+#            - ...
+#
+#          choice2:
+#            - ClassName3.method_name4: {probability: 0.1, <other parameters>}
+#            - ClassName4.method_name5: {probability: 0.2, <other parameters>}
+#            - ...
+#
+#        !! 'choiceX' keys should be unique !!
+
+
+layer1:
+  - AffineTransformation.rotation: {probability: 1.0, angle: [-4, 4], border_value: [[255, 255, 255, 0], [255, 255, 255, 0]]}
+
+  - AffineTransformation.stretch: {probability: 1.0, x_scale:[0, 0.2], y_scale:[0, 0.2]}
+  - PhotometricTransformation.pixelize: {probability: 1., ratio: [1., 4.]}
+
+  - PhotometricTransformation.gauss_noise: {probability: .95, avg: 0, std_dev: 20}
+  - PhotometricTransformation.salt_noise: {probability: .8, percent: [0.0001, 0.0007]}
+  - PhotometricTransformation.paper_noise: {probability: .8, percent: [0.0001, 0.0007]}
+  - ContoursAdderTransformation.random_dirt: {probability: .5}
+
+  - ContoursAdderTransformation.draw_random_contour:
+    - {probability: .8, color: [[255, 255, 255], [255, 255, 255]], limit: [1000, 2000], iterations: [1, 4]}
+    - {probability: .8, color: [[0, 0, 0], [255, 255, 255]], limit: [400, 1500], iterations: [1, 4]}
+    - {probability: .8, color: [[0, 0, 0], [50, 50, 50]], limit: [400, 1500], iterations: [1, 4]}
+
+  - choice1:
+    - PhotometricTransformation.brightness: {probability: 0.6, value: [5, 30], dev: 15}
+    - PhotometricTransformation.darkness: {probability: 0.7, value: [5, 65], dev: 15}
+    - PhotometricTransformation.darkness: {probability: 0.05, value: [70, 100], dev: 15}
+
+  - choice2:
+    - PhotometricTransformation.radial_gradient_effect: {probability: .9, inner_color:[140, 150], outer_color:[0, 10]}
+    - PhotometricTransformation.linear_horizontal_gradient: {probability: .9, color1: [0, 10], color2: [140, 150], reverse: true}
+    - PhotometricTransformation.linear_horizontal_gradient: {probability: .9, color1: [0, 10], color2: [140, 150], reverse: false}
+
+  - DistortedTransformation.random_borders: {probability: .9, horizontal_sides_probability: .7, vertical_sides_probability: .6, max_border: [.0, .3]}
+
+  - PhotometricTransformation.blur: {probability: .3}
+  - PerspectiveTransformation.transform_perspective: {probability: .8, max_warp: 0.1}
+
+layer2: {}
+
+layer3: {}

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ruleset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:noNamespaceSchemaLocation="vendor/squizlabs/php_codesniffer/phpcs.xsd">
+
+    <arg name="basepath" value="."/>
+    <arg name="cache" value=".phpcs-cache"/>
+    <arg name="colors"/>
+    <arg name="extensions" value="php"/>
+
+    <rule ref="Symfony"/>
+
+    <file>src/</file>
+    <file>tests/</file>
+
+    <exclude-pattern>*/src/Migrations/*\.php$</exclude-pattern>
+    <exclude-pattern>*/src/Kernel.php</exclude-pattern>
+    <rule ref="Symfony.Commenting.FunctionComment.Missing">
+      <severity>0</severity>
+    </rule>
+    <rule ref="Symfony.Commenting.ClassComment.Missing">
+      <severity>0</severity>
+    </rule>
+    <rule ref="Symfony.Functions.Arguments.Invalid">
+      <severity>0</severity>
+    </rule>
+    <rule ref="Symfony.Commenting.FunctionComment.MissingParamTag">
+      <severity>0</severity>
+    </rule>
+</ruleset>

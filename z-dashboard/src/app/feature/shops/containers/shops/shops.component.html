@@ -1,0 +1,9 @@
+<nb-layout>
+  <nb-layout-column>
+    <aif-heading-title [title]="title"></aif-heading-title>
+    <aif-shops-list
+      [shops]="shops"
+      [error]="error"
+      (sortedList)="sort($event)" ></aif-shops-list>
+  </nb-layout-column>
+</nb-layout>

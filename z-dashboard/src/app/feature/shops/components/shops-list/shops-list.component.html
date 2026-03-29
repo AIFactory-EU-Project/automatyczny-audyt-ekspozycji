@@ -1,0 +1,33 @@
+<table class="table table-shops">
+  <thead>
+  <tr class="table__header">
+<!--    <th class="table__header-row table-shops__name table__header-sort" (click)="sort('city')">Nazwa sklepu</th>-->
+<!--    <th class="table__header-row table&#45;&#45;row-center table__header-sort" (click)="sort('agreement')">Zgodność</th>-->
+    <th class="table__header-row table-shops__name">Nazwa sklepu</th>
+    <th class="table__header-row table--row-center">Zgodność</th>
+    <th class="table__header-row">Audyt DG</th>
+    <th class="table__header-row">Audyt SP</th>
+    <th class="table__header-row">Audyt Rollery</th>
+  </tr>
+  </thead>
+
+  <tbody>
+    <tr *ngFor="let shop of shops" class="table__tbody">
+      <td class="table__body-row">
+        {{ shop.code }}<ng-container *ngIf="shop.city">, {{ shop.city }}</ng-container>
+        <ng-container *ngIf="shop.street">, {{ shop.street }}</ng-container>
+      </td>
+      <td class="table__body-row table--row-center table-shops__accuracy">
+        <aif-info-color *ngIf="shop.accuracy; else noAccuracy" [percent]="shop.accuracy"></aif-info-color>
+        <ng-template #noAccuracy>-</ng-template>
+      </td>
+      <td class="table__body-row"><a [routerLink]="['/shops', shop.id, 'ready_meal']">Audyt DG</a></td>
+      <td class="table__body-row"><a [routerLink]="['/shops', shop.id, 'quick_snack']">Audyt SP</a></td>
+      <td class="table__body-row"><a [routerLink]="['/shops', shop.id, 'grill']">Audyt Rollery</a></td>
+    </tr>
+
+    <tr *ngIf="error">
+      <td colspan="5"><aif-alert-error [error]="error"></aif-alert-error></td>
+    </tr>
+  </tbody>
+</table>

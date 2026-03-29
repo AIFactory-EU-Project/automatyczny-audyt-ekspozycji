@@ -1,0 +1,15 @@
+@import 'base/reset';
+@import 'base/global';
+
+@import 'components/table';
+@import 'components/forms';
+
+@import 'themes/themes';
+
+@import '~@nebular/theme/styles/globals';
+@import '~@nebular/bootstrap/styles/globals';
+
+@include nb-install() {
+  @include nb-theme-global();
+  @include nb-bootstrap-global();
+};

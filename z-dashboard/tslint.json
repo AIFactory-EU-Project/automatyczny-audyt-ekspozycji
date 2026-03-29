@@ -1,0 +1,17 @@
+{
+  "extends": ["@bling/tslint-config", "@bling/tslint-config-angular", "tslint-config-prettier"],
+  "rules": {
+    "directive-selector": [
+      true,
+      "attribute",
+      "aif",
+      "camelCase"
+    ],
+    "component-selector": [
+      true,
+      "element",
+      "aif",
+      "kebab-case"
+    ]
+  }
+}

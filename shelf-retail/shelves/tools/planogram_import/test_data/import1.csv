@@ -1,0 +1,9 @@
+Kod sklepu;Kod segmentu;Data od;Data do;Nazwa planogramu;Wersja planogramu;Opis planogramu;Numer półki;Pozycja;Index;Nazwa;Liczba twarzy;Sposób ekspozycji
+Text;Int;Text;Text;Text;Text;Text;Int;Int;Text;Text;Int;Int
+shop_planogram_assignment.shop.codes;shop_planogram_assignment.segment.id;shop_planogram_assignment.start_date_time;shop_planogram_assignment.end_date_time;planogram.name;planogram.version;planogram.description;planogram_element.shelf;planogram_element.position;planogram_element.sku.index;planogram_element.sku.name;planogram_element.faces_count;planogram_element.stack_count
+Z1891;2;2019-12-20 00:00:00;2019-12-20 00:00:00;A_DG_szybkie przekąski_1.0_7;8;-;1;1;12004512;SAŁATKA DEGA JARZYNOWA 140G;2;1
+Z1891;2;2019-12-20 00:00:00;2019-12-20 00:00:00;A_DG_szybkie przekąski_1.0_7;8;-;2;1;12004500;SAŁATKA DEGA KEBAB 140G;1;1
+Z1891;2;2019-12-20 00:00:00;2019-12-20 00:00:00;A_DG_szybkie przekąski_1.0_7;8;-;2;2;12005395;SAŁATKA A'LA KEBAB W SOS CZOSNKOW 280G;1;1
+Z0810;2;2019-12-20 00:00:00;2019-12-20 00:00:00;A_DG_szybkie przekąski_1.0_7;8;-;1;1;12004512;SAŁATKA DEGA JARZYNOWA 140G;2;1
+Z0810;2;2019-12-20 00:00:00;2019-12-20 00:00:00;A_DG_szybkie przekąski_1.0_7;8;-;2;1;12004500;SAŁATKA DEGA KEBAB 140G;1;1
+Z0810;2;2019-12-20 00:00:00;2019-12-20 00:00:00;A_DG_szybkie przekąski_1.0_7;8;-;2;2;12005395;SAŁATKA A'LA KEBAB W SOS CZOSNKOW 280G;1;1

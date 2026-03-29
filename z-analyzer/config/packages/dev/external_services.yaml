@@ -1,0 +1,13 @@
+parameters:
+    ecosystem:
+        camera_service:
+            location: 'http://aifactory_mock-services_1:3117/camera-service'
+            credentials:
+                login: 'thatsnotalogin'
+                password: 'andthatsnotapassword'
+        ai_service:
+            location: 'http://aifactory_mock-services_1:3117/ai-service'
+        file_service:
+            location: 'http://aifactory_mock-services_1:3117/file-service'
+
+    router.request_context.host: 'localhost'

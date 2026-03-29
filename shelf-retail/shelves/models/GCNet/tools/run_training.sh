@@ -1,0 +1,1 @@
+./tools/dist_train.sh configs/gcnet/x101/cascade/dcn/custom_cascade_mask_rcnn_r4_gcb_dconv_c3-c5_x101_32x4d_fpn_syncbn_1x.py 1 --validate

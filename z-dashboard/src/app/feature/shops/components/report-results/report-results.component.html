@@ -1,0 +1,63 @@
+<aif-heading-title [title]="title"></aif-heading-title>
+
+<aif-card *ngIf="error" title="Wyniki auudytu - błąd">
+  <aif-alert-error [error]="error"></aif-alert-error>
+</aif-card>
+
+<ng-container *ngIf="reportDetails as report">
+  <div class="row">
+    <div class="col-lg-4 col-12">
+      <aif-shop-data title="Sklep" [shop]="report.shop"></aif-shop-data>
+    </div>
+
+    <div class="col-lg-4 col-12">
+      <aif-audit-data title="Audyt" [audit]="report.report"></aif-audit-data>
+    </div>
+
+    <div class="col-lg-4 col-12">
+      <div *ngIf="auditType !== 'grill'; else grill">
+        <aif-card title="Wyniki">
+          <ul class="result-list">
+            <li class="result-list__item">Poziom zgodności: <span class="result-list__score">{{ report.score + '%' }}</span></li>
+            <li class="result-list__item">Obfitość: <span class="result-list__score">{{ report.abundance + '%' }}</span></li>
+            <li class="result-list__item">Dostępność: <span class="result-list__score">{{ report.availability + '%' }}</span></li>
+          </ul>
+        </aif-card>
+      </div>
+
+      <ng-template #grill>
+        <aif-value-widget [title]="accuracyInfo" [value]="totalAccuracy"></aif-value-widget>
+      </ng-template>
+    </div>
+  </div>
+
+
+  <div class="row grid-container">
+    <div class="col-lg-4 col-12" [ngClass]="{ 'col-lg-6': auditType === 'grill' }">
+      <aif-card title="Stan rzeczywisty - zdjęcie oryginalne" class="aif-card-image">
+        <aif-image-box [image]="report.originalImage" [drawCanvas]="false"></aif-image-box>
+      </aif-card>
+    </div>
+
+    <div class="col-lg-4 col-12" [ngClass]="{ 'col-lg-6': auditType === 'grill' }">
+      <aif-card title="Stan rzeczywisty - zdjęcie przetworzone" class="aif-card-image">
+        <aif-image-box [image]="report.imageReal" [products]="report.products" [drawCanvas]="auditType !== 'grill'"></aif-image-box>
+      </aif-card>
+    </div>
+
+<!--    <div class="col-lg-4 col-12" *ngIf="auditType === 'quick_snack' || auditType === 'ready_meal'">-->
+    <div class="col-lg-4 col-12" *ngIf="auditType !== 'grill'">
+      <aif-card title="Planogram" class="aif-card-image">
+        <aif-image-box [image]="imagePlanogram" [drawCanvas]="false"></aif-image-box>
+      </aif-card>
+    </div>
+  </div>
+
+  <div class="row" *ngIf="report.products">
+    <div class="col-12">
+      <aif-card title="Wyniki" [paddingBodyLeftRight]="0">
+        <aif-audit-result-list [reports]="report.products" (sortedColumn)="sortReportResults($event)"></aif-audit-result-list>
+      </aif-card>
+    </div>
+  </div>
+</ng-container>

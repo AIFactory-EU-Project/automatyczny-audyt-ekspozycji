@@ -1,0 +1,92 @@
+{
+  "planogram": [
+    {
+      "index": "D",
+      "shelf": 1,
+      "position": 1,
+      "faces_count": 2
+    },
+    {
+      "index": "E",
+      "shelf": 1,
+      "position": 2,
+      "faces_count": 1
+    },
+    {
+      "index": "A",
+      "shelf": 2,
+      "position": 1,
+      "faces_count": 2
+    },
+    {
+      "index": "B",
+      "shelf": 2,
+      "position": 2,
+      "faces_count": 1
+    },
+    {
+      "index": "C",
+      "shelf": 2,
+      "position": 3,
+      "faces_count": 1
+    },
+    {
+      "index": "A",
+      "shelf": 2,
+      "position": 3,
+      "faces_count": 1
+    }
+  ],
+  "boxes": [
+    {
+      "skuIndex": "A",
+      "shelfFromTop": 1,
+      "positionFromLeft": 1
+    },
+    {
+      "skuIndex": "L",
+      "shelfFromTop": 1,
+      "positionFromLeft": 2
+    },
+    {
+      "skuIndex": "E",
+      "shelfFromTop": 1,
+      "positionFromLeft": 3
+    },
+    {
+      "skuIndex": "A",
+      "shelfFromTop": 2,
+      "positionFromLeft": 1
+    },
+    {
+      "skuIndex": "B",
+      "shelfFromTop": 2,
+      "positionFromLeft": 2
+    },
+    {
+      "skuIndex": "A",
+      "shelfFromTop": 2,
+      "positionFromLeft": 3
+    },
+    {
+      "skuIndex": "C",
+      "shelfFromTop": 2,
+      "positionFromLeft": 4
+    },
+    {
+      "skuIndex": "B",
+      "shelfFromTop": 2,
+      "positionFromLeft": 5
+    },
+    {
+      "skuIndex": "E",
+      "shelfFromTop": 2,
+      "positionFromLeft": 6
+    },
+    {
+      "skuIndex": "D",
+      "shelfFromTop": 2,
+      "positionFromLeft": 7
+    }
+  ]
+}

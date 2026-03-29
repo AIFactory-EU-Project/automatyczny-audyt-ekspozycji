@@ -1,0 +1,11 @@
+version: "2.0"
+services:
+  planogram_ai_service:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: registry.aif.nordasys.net/aif/planogram_ai_service:lastest
+    ports:
+      - "7552:7552"
+    restart: always
+    # set uid,gui

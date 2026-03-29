@@ -1,0 +1,21 @@
+Najlepiej spożyć przed końcem:
+Najlepiej spożyć przed:
+Najlepiej zużyć przed końcem:
+Najlepiej zużyć przed:
+Termin ważności:
+Termin przydatności:
+Termin ważności (EXP):
+EXP:
+Data ważności: / numer serii:
+Najlepiej spożyć: / Numer partii:
+Najlepiej spożyć przed końcem
+Najlepiej spożyć przed
+Najlepiej zużyć przed końcem
+Najlepiej zużyć przed
+Termin ważności
+Termin przydatności
+Termin przydatności do
+Termin ważności (EXP)
+EXP
+Data ważności / numer serii
+Najlepiej spożyć / Numer partii
